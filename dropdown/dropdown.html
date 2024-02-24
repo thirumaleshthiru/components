@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Dropdown</title>
+</head>
+<body>
+    
+    <nav>
+        <a href="#" id="logo">Fish</a>
+        <ul class="links">
+            <li><a href="#" class="link">Home</a></li>
+           
+            <ul class="droplist">
+                <li class="link" id="dropdown">Services &nbsp;<i class="fa-solid fa-caret-down"></i></li>
+                <div class="droplinks">
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                    </ul>
+                </div>
+                
+            </ul>
+            <li><a href="#" class="link">Contact</a></li>
+        </ul>
+
+        <div class="menu" id="menu">
+            <i class="fa-solid fa-bars" id="open" ></i>
+            <i class="fa-sharp fa-solid fa-xmark" id="close"></i>
+        </div>
+    </nav>
+
+    <script>
+        let open = document.querySelector("#open");
+        let close = document.querySelector("#close");
+        let links = document.querySelector(".links");
+        let nav = document.querySelector("nav");
+        let dropdown = document.querySelector("#dropdown");
+        let dropdownlinks = document.querySelector(".droplinks")
+        let isOpen = false;
+        dropdown.addEventListener('click', (e) => {
+            e.preventDefault();
+           
+            if(!isOpen){
+                dropdownlinks.style.display = "block";
+                isOpen = true;
+            }
+            else{
+                dropdownlinks.style.display = "none";
+                isOpen = false;
+            }
+        })
+
+        open.onclick = function(){
+            menuBarOpen()
+        }
+        close.onclick = function(){
+            menuBarClose()
+        }
+
+        function menuBarOpen(){
+            open.style.display = "none";
+            close.style.display = "block";
+            links.style.display="flex";
+            nav.style.height = "60vh";
+        }
+        function menuBarClose(){
+            open.style.display = "block";
+            close.style.display = "none";
+            links.style.display="none";
+            nav.style.height = "7vh";
+        }
+    </script>
+
+
+</body>
+</html>
