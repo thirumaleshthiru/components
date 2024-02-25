@@ -1,0 +1,55 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.cards{
+    display: flex;
+    padding: 30px;
+    flex-wrap: wrap;
+    gap:30px;
+}
+
+.card{
+    border: 1px solid black;
+    width:300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.card p, .card h2, .card a{
+   margin: 10px;
+}
+ 
+.card a{
+    background-color: black;
+    color:white;
+    border: 1px solid white;
+    text-decoration: none;
+    border-radius: 18px;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+}
+.card p{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+     overflow: hidden;
+  }
+
+
+
+@media screen and (max-width:800px) {
+    .cards{
+        justify-content: center;
+        align-items: center;
+    }
+   .card{
+    width:300px;
+    height: 450px;
+   }
+     
+
+}
